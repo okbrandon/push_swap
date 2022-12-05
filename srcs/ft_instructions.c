@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/05 11:23:22 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:38:19 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
  * @brief A function to push the top element of the stack a
  * to the top of the stack b
  * 
- * @param stack_a		pointer to the stack a
- * @param stack_b 		pointer to the stack b
+ * @param stack_a		pointer to the receipient stack
+ * @param stack_b 		pointer to the source stack
  */
 static void	ft_push(t_stack *stack_a, t_stack *stack_b)
 {
