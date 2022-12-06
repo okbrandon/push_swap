@@ -6,34 +6,29 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:51:33 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/06 18:39:08 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:01:19 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/***
- * A void function to check if the argv are valid
- * argv is a char array
- * we should have an index i to iterate over the array
- * and a counter to count the number of consecutive signs (+ or -)
- * we loop into the array and check if the char isn't \0
- * if the char is a sign and the previous char is a space and the index is not 0
- * we call ft_error to exit the program
- * if the char is a sign and the next char is not a digit
- * we call ft_error to exit the program
- * if the char is a digit or a space we set the sign counter to 0
- * if the char is a sign and the sign counter is less than 2
- * we increment the sign counter
- * if the char is not a digit or a space or a sign
- * we call ft_error to exit the program
- * we increment the index
-*/
+/**
+ * @brief A simple function to check if a character is a sign 
+ * 
+ * @param c			the character to check
+ * @return int 		returns if its a sign or not
+ */
 static int	ft_is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
 
+/**
+ * @brief Compute the arguments and check if they're valid.
+ * If they're not, it makes the program exit.
+ * 
+ * @param argv 		the arguments to check
+ */
 void	ft_are_args_valid(char *argv)
 {
 	int	i;
@@ -77,20 +72,14 @@ static int	ft_is_only_spaces(char *argv)
 	return (1);
 }
 
-/***
- * A void function to check if the argc and argv are valid
- * argc is an int
- * argv is a char of char array
- * we should have an index i to iterate over the array
- * we loop into the array and check if the index is less than argc
- * if argv[i][0] is empty (== \0) we call ft_error to exit the program
- * we increment the index
- * once the first loop is done, we loop into the array again
- * and check if the index is less than argc
- * if argv[i] contains only spaces we call ft_error to exit the program
- * we call ft_verif_args to check if the argv are valid
- * we increment the index
-*/
+/**
+ * @brief A function to check if the arguments count is right and
+ * if the arguments are valid. If they're somehow not valid,
+ * the program will exit it.
+ * 
+ * @param argc			the argument count
+ * @param argv 			the arguments to check
+ */
 void	ft_check_args(int argc, char **argv)
 {
 	int	i;
