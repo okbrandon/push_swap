@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:51:33 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/06 12:49:17 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:39:08 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,12 @@ void	ft_are_args_valid(char *argv)
 	}
 }
 
-/***
- * A int function to check if the argv contains only spaces
- * argv is a char array
- * we should have an index i to iterate over the array
- * we loop into the array and check if the char isn't \0
- * if the char is not a space we return 0
- * we increment the index
- * if the char is \0 we return 1
-*/
+/**
+ * @brief A function to check if a char array only contains spaces
+ * 
+ * @param argv			the char array to check
+ * @return int 			returns if the char array only contains spaces
+ */
 static int	ft_is_only_spaces(char *argv)
 {
 	int	i;
