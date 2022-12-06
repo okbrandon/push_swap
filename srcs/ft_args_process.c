@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:47:39 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/05 19:39:39 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:42:05 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_int_tab_size(char *s)
  * @param stack 		pointer to the stack to be filled
  * @return char** 		pointer to the array of strings
  */
-char	**ft_args_process(int argc, char **argv, t_stack *stack)
+char	**ft_process_args(int argc, char **argv, t_stack *stack)
 {
 	int		i;
 	char	*s;
