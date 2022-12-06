@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_parser.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/03 17:46:26 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:42:22 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,25 @@
  * if it finds a duplicate it should return 1
  * else it should return 0
 */
+static int	ft_is_duplicates(int *array, t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < stack->size)
+	{
+		j = 0;
+		while (j < stack->size)
+		{
+			if (array[i] == array[j] && j != i)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 /***
  * a function that creates a int array from a splitted array of
@@ -40,3 +59,27 @@
  * if there are we should use ft_error and exit the program
  * else we should free the splitted array and return the int array
 */
+int	*ft_parse_args(char	**splitted, t_stack *stack)
+{
+	long	number;
+	int		i;
+	int		j;
+	int		*array;
+
+	array = malloc((stack->size + 1) * sizeof(int));
+	if (!array)
+		return (NULL);
+	i = stack->size;
+	while (i > 0)
+	{
+		number = ft_atol(splitted[i]);
+		if (number > INT_MAX || number < INT_MIN)
+			ft_error(splitted, stack, array);
+		array[j++] = number;
+		i--;
+	}
+	if (ft_is_duplicates(array, stack))
+		ft_error(splitted, stack, array);
+	free(splitted);
+	return (array);
+}
