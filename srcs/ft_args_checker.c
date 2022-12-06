@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:51:33 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:10 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:49:17 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,33 @@
  * we call ft_error to exit the program
  * we increment the index
 */
+static int	ft_is_sign(char c)
+{
+	return (c == '+' || c == '-');
+}
+
+void	ft_are_args_valid(char *argv)
+{
+	int	i;
+	int	consecutive_signs;
+
+	i = 0;
+	consecutive_signs = 0;
+	while (argv[i])
+	{
+		if (ft_is_sign(argv[i]) && argv[i - 1] == ' ' && i != 0)
+			ft_error(NULL, NULL, NULL);
+		if (ft_is_sign(argv[i]) && !ft_isdigit(argv[i + 1]))
+			ft_error(NULL, NULL, NULL);
+		if (!ft_isdigit(argv[i]) || !ft_is_sign(argv[i]) || argv[i] != ' ')
+			ft_error(NULL, NULL, NULL);
+		if (ft_isdigit(argv[i]) || argv[i] == ' ')
+			consecutive_signs = 0;
+		if (ft_is_sign(argv[i]) && consecutive_signs < 2)
+			consecutive_signs++;
+		i++;
+	}
+}
 
 /***
  * A int function to check if the argv contains only spaces
@@ -39,6 +66,19 @@
  * we increment the index
  * if the char is \0 we return 1
 */
+static int	ft_is_only_spaces(char *argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (argv[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 /***
  * A void function to check if the argc and argv are valid
@@ -54,3 +94,23 @@
  * we call ft_verif_args to check if the argv are valid
  * we increment the index
 */
+void	ft_check_args(int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (i < argc)
+	{
+		if (argv[i][0] == '\0')
+			ft_error(NULL, NULL, NULL);
+		i++;
+	}
+	i = 0;
+	while (i < argc)
+	{
+		if (ft_is_only_spaces(argv[i]))
+			ft_error(NULL, NULL, NULL);
+		ft_are_args_valid(argv[i]);
+		i++;
+	}
+}
