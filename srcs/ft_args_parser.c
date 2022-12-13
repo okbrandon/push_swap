@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/06 10:58:42 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:05:19 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	*ft_parse_args(char	**splitted, t_stack *stack)
 	if (!array)
 		return (NULL);
 	i = stack->size;
+	j = 0;
 	while (i > 0)
 	{
 		number = ft_atol(splitted[i]);

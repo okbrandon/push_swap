@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/05 11:38:19 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:38:25 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_do_pb(t_stack *stack_a, t_stack *stack_b)
 }
 
 /**
- * @brief ra and rb instructions to move all elements from the stack
+ * @brief ra and rb instructions to move all elements of the stack
  * up by one. The first element becomes the last one.
  * 
  * @param stack 		pointer to the stack
@@ -70,9 +70,9 @@ void	ft_do_rotate(t_stack *stack, char c)
 
 	if (stack->size == 0)
 		return ;
-	temp = stack->stack[stack->size - 1];
-	ft_memmove(stack->stack + 1, stack->stack, stack->size * sizeof(int));
-	stack->stack[0] = temp;
+	temp = stack->stack[0];
+	ft_memmove(stack->stack, stack->stack + 1, stack->size * sizeof(int));
+	stack->stack[stack->size - 1] = temp;
 	if (c == 'a')
 		ft_printf("ra\n");
 	else if (c == 'b')
@@ -80,7 +80,7 @@ void	ft_do_rotate(t_stack *stack, char c)
 }
 
 /**
- * @brief rra and rrb instructions to move all elements of the stack
+ * @brief rra and rrb instructions to move all elements from the stack
  * down by one. The last element becomes the first one.
  * 
  * @param stack 		pointer to the stack
@@ -92,9 +92,9 @@ void	ft_do_reverse_rotate(t_stack *stack, char c)
 
 	if (stack->size == 0)
 		return ;
-	temp = stack->stack[0];
-	ft_memmove(stack->stack, stack->stack + 1, stack->size * sizeof(int));
-	stack->stack[stack->size - 1] = temp;
+	temp = stack->stack[stack->size - 1];
+	ft_memmove(stack->stack + 1, stack->stack, stack->size * sizeof(int));
+	stack->stack[0] = temp;
 	if (c == 'a')
 		ft_printf("rra\n");
 	else if (c == 'b')
