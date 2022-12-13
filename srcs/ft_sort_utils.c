@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/05 19:34:44 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/13 19:46:45 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_is_sorted(t_stack *stack)
 	i = 0;
 	while (i < stack->size - 1)
 	{
-		if (stack->stack[i] < stack->stack[i + 1])
+		if (stack->stack[i] > stack->stack[i + 1])
 			return (0);
 		i++;
 	}
