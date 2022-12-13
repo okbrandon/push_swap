@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2022/12/13 14:15:57 by bsoubaig         ###   ########.fr        #
+#    Updated: 2022/12/13 19:44:14 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	= srcs/ft_args_checker.c \
 		  srcs/ft_instructions.c \
 		  srcs/ft_other_utils.c \
 		  srcs/ft_sort_utils.c \
+		  srcs/ft_sort_process.c \
 		  srcs/push_swap.c
 OBJS	= $(SRCS:.c=.o)
 CC		= gcc
