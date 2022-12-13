@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/13 19:48:00 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:15:04 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ int	main(void)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		filled_array[2] = {90, 2};
+	int		filled_array[3] = {3, 2, 1};
 	int		*empty_array = malloc(1);
 
 	stack_a = (t_stack *) malloc(sizeof(stack_a));
 	stack_b = (t_stack *) malloc(sizeof(stack_b));
 	stack_a->stack = filled_array;
-	stack_a->size = 2;
-	stack_a->max_size = 2;
+	stack_a->size = 3;
+	stack_a->max_size = 3;
 	stack_b->stack = empty_array;
 	stack_b->size = 0;
 	stack_b->size = 0;

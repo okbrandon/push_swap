@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/13 19:23:42 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:06:55 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,19 @@ void	ft_do_reverse_rotate(t_stack *stack, char c)
 		ft_printf("rra\n");
 	else if (c == 'b')
 		ft_printf("rrb\n");
+}
+
+void	ft_do_swap(t_stack *stack, char c)
+{
+	int	temp;
+
+	if (stack->size == 0)
+		return ;
+	temp = stack->stack[0];
+	stack->stack[0] = stack->stack[1];
+	stack->stack[1] = temp;
+	if (c == 'a')
+		ft_printf("sa\n");
+	else if (c == 'b')
+		ft_printf("sb\n");
 }
