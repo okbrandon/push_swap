@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/13 20:06:55 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/18 19:38:07 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
- * @brief A function to push the top element of the stack a
- * to the top of the stack b
- * 
- * @param stack_a		pointer to the receipient stack
- * @param stack_b 		pointer to the source stack
- */
-static void	ft_push(t_stack *stack_a, t_stack *stack_b)
-{
-	stack_a->size += 1;
-	stack_b->size -= 1;
-	stack_a->stack[stack_a->size - 1] = stack_b->stack[stack_b->size];
-	stack_b->stack[stack_b->size] = '\0';
-}
 
 /**
  * @brief pa instruction to push the top element of the stack b
@@ -36,9 +21,16 @@ static void	ft_push(t_stack *stack_a, t_stack *stack_b)
  */
 void	ft_do_pa(t_stack *stack_a, t_stack *stack_b)
 {
+	int	temp;
+
 	if (stack_b->size == 0)
 		return ;
-	ft_push(stack_a, stack_b);
+	stack_a->size += 1;
+	stack_b->size -= 1;
+	temp = stack_b->stack[0];
+	ft_memmove(stack_b->stack, stack_b->stack + 1, stack_b->size * sizeof(int));
+	ft_memmove(stack_a->stack + 1, stack_a->stack, stack_a->size * sizeof(int));
+	stack_a->stack[0] = temp;
 	ft_printf("pa\n");
 }
 
@@ -51,9 +43,16 @@ void	ft_do_pa(t_stack *stack_a, t_stack *stack_b)
  */
 void	ft_do_pb(t_stack *stack_a, t_stack *stack_b)
 {
+	int	temp;
+
 	if (stack_a->size == 0)
 		return ;
-	ft_push(stack_b, stack_a);
+	stack_b->size += 1;
+	stack_a->size -= 1;
+	temp = stack_a->stack[0];
+	ft_memmove(stack_b->stack + 1, stack_b->stack, stack_b->size * sizeof(int));
+	ft_memmove(stack_a->stack, stack_a->stack + 1, stack_a->size * sizeof(int));
+	stack_b->stack[0] = temp;
 	ft_printf("pb\n");
 }
 
