@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:49:17 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/03 14:34:19 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:22:49 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*pointer;
 	size_t	i;
 
-	if (count && SIZE_MAX / size < count)
+	if (size && SIZE_MAX / size < count)
 		return (NULL);
 	pointer = (void *) malloc(count * size);
 	if (!pointer)

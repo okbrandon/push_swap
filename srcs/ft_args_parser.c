@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_parser.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/13 14:05:19 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:32:57 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,17 @@ int	*ft_parse_args(char	**splitted, t_stack *stack)
 	int		j;
 	int		*array;
 
-	array = malloc((stack->size + 1) * sizeof(int));
+	array = ft_calloc((stack->size + 1), sizeof(int));
 	if (!array)
 		return (NULL);
-	i = stack->size;
+	i = stack->size - 1;
 	j = 0;
-	while (i > 0)
+	while (i >= 0)
 	{
-		number = ft_atol(splitted[i]);
+		number = ft_atol(splitted[j++]);
 		if (number > INT_MAX || number < INT_MIN)
 			ft_error(splitted, stack, array);
-		array[j++] = number;
-		i--;
+		array[i--] = number;
 	}
 	if (ft_is_duplicates(array, stack))
 		ft_error(splitted, stack, array);

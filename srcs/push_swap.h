@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/24 23:31:22 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:15:47 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ void	ft_do_rotate(t_stack *stack, char c);
 void	ft_do_reverse_rotate(t_stack *stack, char c);
 void	ft_do_swap(t_stack *stack, char c);
 long	ft_atol(const char *str);
+void	ft_free_split(char **splitted);
 void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b);
 void	ft_error(char **splitted, t_stack *stack, int *array);
 int		ft_is_sorted(t_stack *stack);
 int		ft_find_min_int(t_stack *stack);
-void	ft_insert_min_int_to_top(t_stack *stack);
+void	ft_insert_min_int_to_top(t_stack *stack, char c);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

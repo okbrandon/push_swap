@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:23:48 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/05 19:37:33 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:15:31 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+/**
+ * @brief A function to free a string array
+ * 
+ * @param splitted 		the array of strings to be freed
+ */
+void	ft_free_split(char **splitted)
+{
+	int	i;
+
+	i = 0;
+	while (splitted[i])
+		free(splitted[i++]);
+	free(splitted);
 }
 
 /**

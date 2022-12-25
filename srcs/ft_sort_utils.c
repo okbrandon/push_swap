@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/24 23:30:44 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:02:53 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ int	ft_find_min_int(t_stack *stack)
  * @brief A function to move the minimal int to the top of the stack
  * 
  * @param stack 		pointer to the stack to modify
+ * @param c 			the char representing the stack id
  */
-void	ft_insert_min_int_to_top(t_stack *stack)
+void	ft_insert_min_int_to_top(t_stack *stack, char c)
 {
 	int	i;
 	int	min;
@@ -77,11 +78,11 @@ void	ft_insert_min_int_to_top(t_stack *stack)
 	if (i <= stack->size / 2)
 	{
 		while (stack->stack[0] != min)
-			ft_do_rotate(stack, 'a');
+			ft_do_rotate(stack, c);
 	}
 	else
 	{
 		while (stack->stack[0] != min)
-			ft_do_reverse_rotate(stack, 'a');
+			ft_do_reverse_rotate(stack, c);
 	}
 }

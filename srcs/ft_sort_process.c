@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/24 23:36:05 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:03:46 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	ft_sort_four_and_five(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	if (stack_a->size == 4)
 	{
-		ft_insert_min_int_to_top(stack_a);
+		ft_insert_min_int_to_top(stack_a, 'a');
 		ft_do_pb(stack_a, stack_b);
 		if (!ft_is_sorted(stack_a))
 			ft_sort_three(stack_a);
@@ -60,15 +60,30 @@ static void	ft_sort_four_and_five(t_stack *stack_a, t_stack *stack_b)
 	}
 	else
 	{
-		ft_insert_min_int_to_top(stack_a);
+		ft_insert_min_int_to_top(stack_a, 'a');
 		ft_do_pb(stack_a, stack_b);
-		ft_insert_min_int_to_top(stack_a);
+		ft_insert_min_int_to_top(stack_a, 'a');
 		ft_do_pb(stack_a, stack_b);
 		if (!ft_is_sorted(stack_a))
 			ft_sort_three(stack_a);
 		ft_do_pa(stack_a, stack_b);
 		ft_do_pa(stack_a, stack_b);
 	}
+}
+
+static void	ft_sort_big_stack(t_stack *stack_a, t_stack *stack_b)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack_a->size)
+	{
+		ft_insert_min_int_to_top(stack_a, 'a');
+		ft_do_pb(stack_a, stack_b);
+		i++;
+	}
+	while (stack_b->size > 0)
+		ft_do_pa(stack_a, stack_b);
 }
 
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
@@ -81,4 +96,6 @@ void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_sort_three(stack_a);
 	else if (stack_a->size <= 5)
 		ft_sort_four_and_five(stack_a, stack_b);
+	else
+		ft_sort_big_stack(stack_a, stack_b);
 }
