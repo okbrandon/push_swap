@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/25 12:33:41 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 14:43:38 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-static void	ft_print_stack(t_stack *stack)
+void	ft_print_stack(t_stack *stack)
 {
 	int	i;
 
@@ -26,94 +26,6 @@ static void	ft_print_stack(t_stack *stack)
 		i++;
 	}
 }
-
-int	ft_get_random_int(int min, int max)
-{
-	return (min + rand() / (RAND_MAX / (max - min + 1) + 1));
-}
-
-/**
- * @brief This is a simple main just to test things manually
- * 
- * @return int 
- */
-// int	main(void)
-// {
-// 	t_stack	*stack_a;
-// 	t_stack	*stack_b;
-// 	int		filled_array[4];
-// 	int		*empty_array;
-// 	int		i;
-
-// 	i = 0;
-// 	srand(time(NULL));
-// 	while (i < 4)
-// 	{
-// 		filled_array[i] = ft_get_random_int(0, 100);
-// 		i++;
-// 	}
-// 	empty_array = malloc(1);
-// 	stack_a = (t_stack *) malloc(sizeof(stack_a));
-// 	stack_b = (t_stack *) malloc(sizeof(stack_b));
-// 	stack_a->stack = filled_array;
-// 	stack_a->stack[4] = '\0';
-// 	stack_a->size = 3;
-// 	stack_a->max_size = 3;
-// 	stack_b->stack = empty_array;
-// 	stack_b->size = 0;
-// 	stack_b->size = 0;
-// 	printf("-- stack_a --\n");
-// 	ft_print_stack(stack_a);
-// 	printf("-- stack_b --\n");
-// 	ft_print_stack(stack_b);
-// 	printf("-- instruction --\n");
-// 	ft_init_sort(stack_a, stack_b);
-// 	printf("-- stack_a --\n");
-// 	ft_print_stack(stack_a);
-// 	printf("-- stack_b --\n");
-// 	ft_print_stack(stack_b);
-// }
-int	*ft_get_int_array(int argc, char **argv)
-{
-	int	*array;
-	int	i;
-
-	i = 0;
-	array = malloc(sizeof(int) * argc);
-	while (i < argc - 1)
-	{
-		array[i] = ft_atoi(argv[i + 1]);
-		i++;
-	}
-	return (array);
-}
-/*
-int	main(int argc, char **argv)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		*empty_array;
-
-	empty_array = malloc(1);
-	stack_a = (t_stack *) malloc(sizeof(stack_a));
-	stack_b = (t_stack *) malloc(sizeof(stack_b));
-	stack_a->stack = ft_get_int_array(argc, argv);
-	stack_a->size = argc - 1;
-	stack_a->max_size = argc - 1;
-	stack_b->stack = empty_array;
-	stack_b->size = 0;
-	stack_b->size = 0;
-	printf("-- stack_a --\n");
-	ft_print_stack(stack_a);
-	printf("-- stack_b --\n");
-	ft_print_stack(stack_b);
-	printf("-- instruction --\n");
-	ft_init_sort(stack_a, stack_b);
-	printf("-- stack_a --\n");
-	ft_print_stack(stack_a);
-	printf("-- stack_b --\n");
-	ft_print_stack(stack_b);
-}*/
 
 int	main(int argc, char **argv)
 {
@@ -136,16 +48,17 @@ int	main(int argc, char **argv)
 	if (!stack_b->stack)
 		return (1);
 	stack_b->size = 0;
-	printf("-- stack_a --\n");
+	/*printf("-- stack_a --\n");
 	ft_print_stack(stack_a);
 	printf("-- stack_b --\n");
 	ft_print_stack(stack_b);
-	printf("-- instruction --\n");
-	ft_init_sort(stack_a, stack_b);
-	printf("-- stack_a --\n");
+	printf("-- instruction --\n");*/
+	if (!ft_is_sorted(stack_a))
+		ft_init_sort(stack_a, stack_b);
+	/*printf("-- stack_a --\n");
 	ft_print_stack(stack_a);
 	printf("-- stack_b --\n");
-	ft_print_stack(stack_b);
+	ft_print_stack(stack_b);*/
 	ft_free_all_stacks(stack_a, stack_b);
 	return (0);
 }

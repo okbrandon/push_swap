@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/25 12:32:57 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/25 14:38:59 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,31 @@ static int	ft_is_duplicates(int *array, t_stack *stack)
 }
 
 /**
+ * @brief This function reverse an int array
+ * It's used to make the stack with the right order from the subject
+ * 
+ * @param array		an array of int
+ * @param size		the size of the array
+ */
+static void	ft_reverse_array(int *array, int size)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	j = size - 1;
+	while (i < j)
+	{
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+		i++;
+		j--;
+	}
+}
+
+/**
  * @brief A function that will parse splitted arguments from a main
  * to a single int array
  * 
@@ -70,5 +95,6 @@ int	*ft_parse_args(char	**splitted, t_stack *stack)
 	if (ft_is_duplicates(array, stack))
 		ft_error(splitted, stack, array);
 	free(splitted);
+	ft_reverse_array(array, stack->size);
 	return (array);
 }
