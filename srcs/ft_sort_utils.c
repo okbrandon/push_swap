@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/25 12:02:53 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/27 20:51:00 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,30 @@ int	ft_find_min_int(t_stack *stack)
 		i++;
 	}
 	return (min);
+}
+
+/**
+ * @brief A function to find the max int in a stack
+ * 
+ * @param stack 		pointer to the stack
+ * @return int 			the maximal int in the stack
+ */
+int	ft_find_max_int(t_stack *stack)
+{
+	int	i;
+	int	max;
+
+	if (!stack || !stack->stack)
+		return (0);
+	i = 0;
+	max = stack->stack[0];
+	while (i < stack->size)
+	{
+		if (stack->stack[i] > max)
+			max = stack->stack[i];
+		i++;
+	}
+	return (max);
 }
 
 /**

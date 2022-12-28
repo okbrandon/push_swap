@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/25 14:43:38 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2022/12/27 20:11:16 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	ft_print_stack(t_stack *stack)
 {
 	int	i;
 
+	if (!stack || !stack->stack || stack->size == 0)
+	{
+		printf("! empty !\n");
+		return ;
+	}
 	i = 0;
 	while (i < stack->size)
 	{
@@ -48,17 +53,18 @@ int	main(int argc, char **argv)
 	if (!stack_b->stack)
 		return (1);
 	stack_b->size = 0;
-	/*printf("-- stack_a --\n");
+	printf("---- displaying stacks ----\n");
+	printf("  stack_a's content\n");
 	ft_print_stack(stack_a);
-	printf("-- stack_b --\n");
+	printf("  stack_b's content\n");
 	ft_print_stack(stack_b);
-	printf("-- instruction --\n");*/
+	printf("-- displaying instructions --\n");
 	if (!ft_is_sorted(stack_a))
 		ft_init_sort(stack_a, stack_b);
-	/*printf("-- stack_a --\n");
+	printf("  stack_a's content\n");
 	ft_print_stack(stack_a);
-	printf("-- stack_b --\n");
-	ft_print_stack(stack_b);*/
+	printf("  stack_b's content\n");
+	ft_print_stack(stack_b);
 	ft_free_all_stacks(stack_a, stack_b);
 	return (0);
 }
