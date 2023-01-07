@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_algorithm.c                                :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:42 by bsoubaig         ###   ########.fr       */
+/*   Created: 2022/11/13 18:48:26 by bsoubaig          #+#    #+#             */
+/*   Updated: 2023/01/07 10:58:33 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-#include <stdio.h>
+#include "../../includes/ft_printf.h"
 
-void	ft_sort_big_stack(t_stack *stack_a, t_stack *stack_b)
+int	ft_putunsigned(unsigned int n)
 {
-	int		size;
+	int	i;
 
-	if (ft_is_sorted(stack_a))
-		return ;
-	size = stack_a->size;
-	while (size > 0)
+	i = 0;
+	if (n >= 10)
 	{
-		ft_insert_min_int_to_top(stack_a, 'a');
-		ft_do_pb(stack_a, stack_b);
-		size--;
+		i += ft_putunsigned(n / 10);
+		i += ft_putunsigned(n % 10);
 	}
-	while (stack_b->size > 0)
-		ft_do_pa(stack_a, stack_b);
+	else
+		i += ft_putchar(n + '0');
+	return (i);
 }

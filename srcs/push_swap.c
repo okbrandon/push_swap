@@ -6,11 +6,11 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/28 16:46:28 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:31 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

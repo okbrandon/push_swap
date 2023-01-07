@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/27 20:51:00 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:38 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * @brief A function to verify if the stack is sorted

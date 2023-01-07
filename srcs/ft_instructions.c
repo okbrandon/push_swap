@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_instructions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/18 19:38:07 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:46 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * @brief pa instruction to push the top element of the stack b

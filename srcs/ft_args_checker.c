@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_args_checker.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:51:33 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/25 12:29:19 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:52 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * @brief A simple function to check if a character is a sign 

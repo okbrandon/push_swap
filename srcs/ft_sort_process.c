@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/27 20:31:25 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:40 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdio.h>
 
 static void	ft_sort_two(t_stack *stack)

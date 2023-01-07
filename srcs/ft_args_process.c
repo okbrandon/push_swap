@@ -6,11 +6,11 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:47:39 by bsoubaig          #+#    #+#             */
-/*   Updated: 2022/12/06 12:42:05 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 11:01:47 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * @brief A function to re-alloc a string
