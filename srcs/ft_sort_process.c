@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:40 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 12:08:01 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_a->size <= 5)
 		ft_sort_four_and_five(stack_a, stack_b);
 	else
-		ft_sort_big_stack(stack_a, stack_b);
+		ft_sort_big_stack(stack_a, stack_b, 5);
 }

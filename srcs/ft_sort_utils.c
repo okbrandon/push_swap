@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:38 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 17:51:06 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,48 @@ void	ft_insert_min_int_to_top(t_stack *stack, char c)
 		while (stack->stack[0] != min)
 			ft_do_reverse_rotate(stack, c);
 	}
+}
+
+void	ft_insert_max_int_to_top(t_stack *stack, char c)
+{
+	int	i;
+	int	max;
+
+	if (!stack || !stack->stack)
+		return ;
+	i = 0;
+	max = ft_find_max_int(stack);
+	while (stack->stack[i] != max)
+		i++;
+	if (i <= stack->size / 2)
+	{
+		while (stack->stack[0] != max)
+			ft_do_rotate(stack, c);
+	}
+	else
+	{
+		while (stack->stack[0] != max)
+			ft_do_reverse_rotate(stack, c);
+	}
+}
+
+/**
+ * @brief A function to search a int and get its index from the stack
+ * 
+ * @param stack 		pointer to the stack
+ * @param search 		int we are looking for
+ * @return int 			the index of the int
+ */
+int	ft_get_index(t_stack *stack, int search)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->size)
+	{
+		if (stack->stack[i] == search)
+			break ;
+		i++;
+	}
+	return (i);
 }

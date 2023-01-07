@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:24 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/07 17:51:19 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int		ft_is_sorted(t_stack *stack);
 int		ft_find_min_int(t_stack *stack);
 int		ft_find_max_int(t_stack *stack);
 void	ft_insert_min_int_to_top(t_stack *stack, char c);
-void	ft_sort_big_stack(t_stack *stack_a, t_stack *stack_b);
+void	ft_insert_max_int_to_top(t_stack *stack, char c);
+int		ft_get_index(t_stack *stack, int search);
+void	ft_sort_big_stack(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif
