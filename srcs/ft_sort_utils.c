@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 17:51:06 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 19:19:14 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/**
- * @brief A function to verify if the stack is sorted
- * 
- * @param stack 		pointer to the stack
- * @return int 			1 if the stack is sorted, 0 if it isn't
- */
 int	ft_is_sorted(t_stack *stack)
 {
 	int	i;
@@ -34,12 +28,6 @@ int	ft_is_sorted(t_stack *stack)
 	return (1);
 }
 
-/**
- * @brief A function to find the max int in a stack
- * 
- * @param stack 		pointer to the stack
- * @return int 			the minimal int in the stack
- */
 int	ft_find_min_int(t_stack *stack)
 {
 	int	i;
@@ -58,12 +46,6 @@ int	ft_find_min_int(t_stack *stack)
 	return (min);
 }
 
-/**
- * @brief A function to find the max int in a stack
- * 
- * @param stack 		pointer to the stack
- * @return int 			the maximal int in the stack
- */
 int	ft_find_max_int(t_stack *stack)
 {
 	int	i;
@@ -82,12 +64,6 @@ int	ft_find_max_int(t_stack *stack)
 	return (max);
 }
 
-/**
- * @brief A function to move the minimal int to the top of the stack
- * 
- * @param stack 		pointer to the stack to modify
- * @param c 			the char representing the stack id
- */
 void	ft_insert_min_int_to_top(t_stack *stack, char c)
 {
 	int	i;
@@ -132,25 +108,4 @@ void	ft_insert_max_int_to_top(t_stack *stack, char c)
 		while (stack->stack[0] != max)
 			ft_do_reverse_rotate(stack, c);
 	}
-}
-
-/**
- * @brief A function to search a int and get its index from the stack
- * 
- * @param stack 		pointer to the stack
- * @param search 		int we are looking for
- * @return int 			the index of the int
- */
-int	ft_get_index(t_stack *stack, int search)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->size)
-	{
-		if (stack->stack[i] == search)
-			break ;
-		i++;
-	}
-	return (i);
 }
