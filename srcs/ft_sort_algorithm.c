@@ -6,14 +6,14 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 20:14:00 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:25:02 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
 
-int	ft_is_in_chunk(t_stack *stack, int min, int max)
+static int	ft_is_in_chunk(t_stack *stack, int min, int max)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	ft_is_in_chunk(t_stack *stack, int min, int max)
 	return (-1);
 }
 
-void	ft_insert_int_to_top(t_stack *stack, int index)
+static void	ft_insert_int_to_top(t_stack *stack, int index)
 {
 	int	number;
 
@@ -46,7 +46,7 @@ void	ft_insert_int_to_top(t_stack *stack, int index)
 	}
 }
 
-void	ft_hundred_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
+void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 {
 	int	from;
 	int	to;

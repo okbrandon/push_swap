@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/07 11:04:51 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/13 20:21:22 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ $(NAME): 		${LIBFT_LIB} $(OBJS)
 	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Compiling project...${GREY}"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_LIB)
 	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: ${RED}$(NAME)${RESET} compiled ${GREEN}successfully${RESET}.${GREY}"
+	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: ${RED}${BOLD}$(NAME)${RESET} compiled ${GREEN}successfully${RESET}.${GREY}"
 	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
 
 $(LIBFT_LIB_DIR):
