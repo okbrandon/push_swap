@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 19:38:17 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:14:00 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,43 +29,48 @@ int	ft_is_in_chunk(t_stack *stack, int min, int max)
 
 void	ft_insert_int_to_top(t_stack *stack, int index)
 {
-	int	i;
+	int	number;
 
-	i = 0;
 	if (index == 0)
 		return ;
+	number = stack->stack[index];
 	if (index <= stack->size / 2)
 	{
-		while (stack->stack[0] != stack->stack[index])
-		{
+		while (stack->stack[0] != number)
 			ft_do_rotate(stack, 'a');
-			i++;
-		}
 	}
 	else
 	{
-		while (stack->stack[0] != stack->stack[index])
-		{
+		while (stack->stack[0] != number)
 			ft_do_reverse_rotate(stack, 'a');
-			i++;
-		}
 	}
 }
 
-void	ft_hundred_sort(t_stack *stack_a, t_stack *stack_b)
+void	ft_hundred_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 {
 	int	from;
 	int	to;
+	int	index;
 
-	from = 0;
-	to = 19;
+	from = ft_find_min_int(stack_a);
+	to = from + chunk_size - 1;
 	while (stack_a->size)
 	{
-		while (ft_is_in_chunk(stack_a, from, to) != -1)
+		index = 0;
+		while (index != -1)
 		{
-			
+			index = ft_is_in_chunk(stack_a, from, to);
+			if (index == -1)
+				break ;
+			ft_insert_int_to_top(stack_a, index);
+			ft_do_pb(stack_a, stack_b);
 		}
-		from += 20;
-		to += 20;
+		from += chunk_size;
+		to += chunk_size;
+	}
+	while (stack_b->size)
+	{
+		ft_insert_max_int_to_top(stack_b, 'b');
+		ft_do_pa(stack_a, stack_b);
 	}
 }

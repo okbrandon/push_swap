@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 19:27:44 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:02:46 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+/* 
 void	ft_print_stack(t_stack *stack)
 {
 	int	i;
@@ -69,8 +69,8 @@ int	main(int argc, char **argv)
 	ft_print_stack(stack_b);
 	ft_free_all_stacks(stack_a, stack_b);
 	return (0);
-}
-/* 
+} */
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -98,4 +98,4 @@ int	main(int argc, char **argv)
 		ft_init_sort(stack_a, stack_b);
 	ft_free_all_stacks(stack_a, stack_b);
 	return (0);
-} */
+}

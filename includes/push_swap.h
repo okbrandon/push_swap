@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 19:29:17 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:05:21 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_find_min_int(t_stack *stack);
 int		ft_find_max_int(t_stack *stack);
 void	ft_insert_min_int_to_top(t_stack *stack, char c);
 void	ft_insert_max_int_to_top(t_stack *stack, char c);
-void	ft_hundred_sort(t_stack *stack_a, t_stack *stack_b);
+void	ft_hundred_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_sort_three(t_stack *stack);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 

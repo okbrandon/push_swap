@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 19:29:11 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:05:24 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_a->size <= 5)
 		ft_sort_four_and_five(stack_a, stack_b);
 	else if (stack_a->size == 100)
-		ft_hundred_sort(stack_a, stack_b);
+		ft_hundred_sort(stack_a, stack_b, 20);
 }
