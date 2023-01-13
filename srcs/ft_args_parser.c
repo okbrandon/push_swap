@@ -6,11 +6,12 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:50 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:42:03 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 /**
  * @brief A function used to check if there's a duplicated int in
