@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:47:39 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:47 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/14 09:49:48 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,18 @@ int	ft_int_tab_size(char *s)
 
 	i = 0;
 	counter = 0;
+	if (s[i] != ' ')
+		counter++;
 	while (s[i])
 	{
 		if (s[i] == ' ')
-		{
-			while (s[i] == ' ' && s[i])
-				i++;
-		}
+			i++;
 		else
 		{
-			while (s[i] != ' ' && s[i])
-				i++;
-			counter++;
+			if (s[i + 1] && s[i + 1] == ' ')
+				counter++;
+			i++;
 		}
-		i++;
 	}
 	return (counter);
 }

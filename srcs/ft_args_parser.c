@@ -6,12 +6,11 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 20:42:03 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/14 09:37:01 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 /**
  * @brief A function used to check if there's a duplicated int in
@@ -91,7 +90,7 @@ int	*ft_parse_args(char	**splitted, t_stack *stack)
 		number = ft_atol(splitted[j++]);
 		if (number > INT_MAX || number < INT_MIN)
 			ft_error(splitted, stack, array);
-		array[i--] = number;
+		array[i--] = (int) number;
 	}
 	if (ft_is_duplicates(array, stack))
 		ft_error(splitted, stack, array);

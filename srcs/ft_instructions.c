@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 11:01:46 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/14 11:25:34 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_do_pa(t_stack *stack_a, t_stack *stack_b)
 	ft_memmove(stack_b->stack, stack_b->stack + 1, stack_b->size * sizeof(int));
 	ft_memmove(stack_a->stack + 1, stack_a->stack, stack_a->size * sizeof(int));
 	stack_a->stack[0] = temp;
-	ft_printf("pa\n");
+	ft_print_instruction("pa");
 }
 
 /**
@@ -53,7 +53,7 @@ void	ft_do_pb(t_stack *stack_a, t_stack *stack_b)
 	ft_memmove(stack_b->stack + 1, stack_b->stack, stack_b->size * sizeof(int));
 	ft_memmove(stack_a->stack, stack_a->stack + 1, stack_a->size * sizeof(int));
 	stack_b->stack[0] = temp;
-	ft_printf("pb\n");
+	ft_print_instruction("pb");
 }
 
 /**
@@ -73,9 +73,9 @@ void	ft_do_rotate(t_stack *stack, char c)
 	ft_memmove(stack->stack, stack->stack + 1, stack->size * sizeof(int));
 	stack->stack[stack->size - 1] = temp;
 	if (c == 'a')
-		ft_printf("ra\n");
+		ft_print_instruction("ra");
 	else if (c == 'b')
-		ft_printf("rb\n");
+		ft_print_instruction("rb");
 }
 
 /**
@@ -95,9 +95,9 @@ void	ft_do_reverse_rotate(t_stack *stack, char c)
 	ft_memmove(stack->stack + 1, stack->stack, stack->size * sizeof(int));
 	stack->stack[0] = temp;
 	if (c == 'a')
-		ft_printf("rra\n");
+		ft_print_instruction("rra");
 	else if (c == 'b')
-		ft_printf("rrb\n");
+		ft_print_instruction("rrb");
 }
 
 void	ft_do_swap(t_stack *stack, char c)
@@ -110,7 +110,7 @@ void	ft_do_swap(t_stack *stack, char c)
 	stack->stack[0] = stack->stack[1];
 	stack->stack[1] = temp;
 	if (c == 'a')
-		ft_printf("sa\n");
+		ft_print_instruction("sa");
 	else if (c == 'b')
-		ft_printf("sb\n");
+		ft_print_instruction("sb");
 }

@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/13 20:24:37 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/14 11:25:00 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		*ft_parse_args(char	**splitted, t_stack *stack);
 char	*ft_free_and_join(char *s1, char *s2);
 int		ft_int_tab_size(char *s);
 char	**ft_process_args(int argc, char **argv, t_stack *stack);
+void	ft_print_instruction(char *action);
 void	ft_do_pa(t_stack *stack_a, t_stack *stack_b);
 void	ft_do_pb(t_stack *stack_a, t_stack *stack_b);
 void	ft_do_rotate(t_stack *stack, char c);
@@ -44,6 +45,7 @@ int		ft_find_min_int(t_stack *stack);
 int		ft_find_max_int(t_stack *stack);
 void	ft_insert_min_int_to_top(t_stack *stack, char c);
 void	ft_insert_max_int_to_top(t_stack *stack, char c);
+void	ft_sort_three(t_stack *stack);
 void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 
