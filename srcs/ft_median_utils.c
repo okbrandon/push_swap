@@ -6,14 +6,14 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:37:02 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/16 14:05:04 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:16:21 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
 
-static int	ft_count_in_chunk(t_stack *stack, int min, int max)
+/* static int	ft_count_in_chunk(t_stack *stack, int min, int max)
 {
 	int	i;
 	int	count;
@@ -27,7 +27,7 @@ static int	ft_count_in_chunk(t_stack *stack, int min, int max)
 		i++;
 	}
 	return (count);
-}
+} */
 
 static void	ft_swap(int	*a, int *b)
 {
@@ -38,7 +38,7 @@ static void	ft_swap(int	*a, int *b)
 	*b = temp;
 }
 
-static void	ft_sort_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	modifications;
@@ -61,29 +61,22 @@ static void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int	ft_get_median(t_stack *stack, int min, int max)
+int	ft_get_median(t_stack *stack)
 {
 	int	*array;
 	int	to_return;
-	int	size;
 	int	i;
 	int	j;
 
-	size = ft_count_in_chunk(stack, min, max);
-	array = malloc(sizeof(int) * size);
+	array = malloc(sizeof(int) * stack->size + 1);
 	if (!array)
 		return (-1);
 	i = 0;
 	j = 0;
 	while (i < stack->size)
-	{
-		if (stack->stack[i] >= min && stack->stack[i] <= max)
-			array[j++] = stack->stack[i];
-		i++;
-	}
-	ft_sort_int_tab(array, size);
-	to_return = array[size / 2];
-	//printf("to_return=%d\n", to_return);
+		array[j++] = stack->stack[i++];
+	ft_sort_int_tab(array, stack->size);
+	to_return = array[stack->size / 2];
 	free(array);
 	return (to_return);
 }

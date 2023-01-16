@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/16 15:30:46 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:13:40 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 	int	index;
 	int	middle;
 
-	from = ft_find_min_int(stack_a);
-	to = from + chunk_size - 1;
+	middle = ft_get_median(stack_a);
+	from = middle - chunk_size;
+	to = middle + chunk_size;
 	while (stack_a->size)
 	{
 		index = 0;
-		middle = ft_get_median(stack_a, from, to);
 		while (index != -1)
 		{
 			index = ft_is_in_chunk(stack_a, from, to);
@@ -68,7 +68,7 @@ void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 			if (stack_b->stack[0] < middle)
 				ft_do_rotate(stack_b, 'b');
 		}
-		from += chunk_size;
+		from -= chunk_size;
 		to += chunk_size;
 	}
 	while (stack_b->size)
