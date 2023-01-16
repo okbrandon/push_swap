@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/14 17:48:52 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:38:25 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_do_pb(t_stack *stack_a, t_stack *stack_b);
 void	ft_do_rotate(t_stack *stack, char c);
 void	ft_do_reverse_rotate(t_stack *stack, char c);
 void	ft_do_swap(t_stack *stack, char c);
+int		ft_get_median(t_stack *stack, int min, int max);
 long	ft_atol(const char *str);
 void	ft_free_split(char **splitted);
 void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b);
@@ -46,6 +47,7 @@ int		ft_find_max_int(t_stack *stack);
 void	ft_insert_min_int_to_top(t_stack *stack, char c);
 void	ft_insert_max_int_to_top(t_stack *stack, char c);
 void	ft_sort_three(t_stack *stack);
+int		ft_is_in_chunk(t_stack *stack, int min, int max);
 void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 
