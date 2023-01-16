@@ -6,11 +6,12 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:37:02 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/16 11:45:07 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:05:04 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 static int	ft_count_in_chunk(t_stack *stack, int min, int max)
 {
@@ -70,20 +71,19 @@ int	ft_get_median(t_stack *stack, int min, int max)
 
 	size = ft_count_in_chunk(stack, min, max);
 	array = malloc(sizeof(int) * size);
+	if (!array)
+		return (-1);
 	i = 0;
 	j = 0;
-	if (array)
+	while (i < stack->size)
 	{
-		while (i < stack->size)
-		{
-			if (stack->stack[i] >= min && stack->stack[i] <= max)
-				array[j++] = stack->stack[i];
-			i++;
-		}
-		ft_sort_int_tab(array, size);
-		to_return = array[size / 2];
-		free(array);
-		return (to_return);
+		if (stack->stack[i] >= min && stack->stack[i] <= max)
+			array[j++] = stack->stack[i];
+		i++;
 	}
-	return (-1);
+	ft_sort_int_tab(array, size);
+	to_return = array[size / 2];
+	//printf("to_return=%d\n", to_return);
+	free(array);
+	return (to_return);
 }
