@@ -6,15 +6,12 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/17 10:38:50 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/17 14:55:15 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
+
 /* 
 void	ft_print_stack(t_stack *stack)
 {
@@ -97,7 +94,6 @@ int	main(int argc, char **argv)
 	stack_b->size = 0;
 	if (!ft_is_sorted(stack_a))
 		ft_init_sort(stack_a, stack_b);
-	ft_print_instruction("");
 	ft_free_all_stacks(stack_a, stack_b);
 	return (0);
 }
