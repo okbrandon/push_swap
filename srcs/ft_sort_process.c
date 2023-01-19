@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/17 14:54:11 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:36:44 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,6 @@ static void	ft_handle_stack(t_stack *stack)
 	stack->middle = array[stack->size / 2];
 }
 
-/**
- * 6050~: 35, 5630~: 55
-*/
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (!stack_a || !stack_b)
@@ -98,9 +95,9 @@ void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_sort_three(stack_a);
 	else if (stack_a->size <= 5)
 		ft_sort_four_and_five(stack_a, stack_b);
-	else if (stack_a->size <= 100)
+	else if (stack_a->size <= 120)
 		ft_chunk_sort(stack_a, stack_b, 18);
 	else
-		ft_chunk_sort(stack_a, stack_b, 60);
+		ft_chunk_sort(stack_a, stack_b, 50);
 	ft_print_instruction("");
 }

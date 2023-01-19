@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/17 14:50:50 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:32:21 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,15 @@ static int	ft_get_min_int_index(t_stack *stack, int min)
 	return (i);
 }
 
+static void	ft_push_b_to_a(t_stack *stack_a, t_stack *stack_b)
+{
+	while (stack_b->size)
+	{
+		ft_insert_max_int_to_top(stack_b, 'b');
+		ft_do_pa(stack_a, stack_b);
+	}
+}
+
 void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 {
 	int	index;
@@ -74,7 +83,11 @@ void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 		times = 0;
 		min_int = ft_find_min_int(stack_a);
 		while (times++ < chunk_size)
+		{
 			min_int = ft_find_next_min_int(stack_a, min_int);
+			if (times == chunk_size / 2)
+				stack_a->middle = min_int;
+		}
 		times = 0;
 		while (times++ < chunk_size)
 		{
@@ -85,9 +98,5 @@ void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size)
 				ft_do_rotate(stack_b, 'b');
 		}
 	}
-	while (stack_b->size)
-	{
-		ft_insert_max_int_to_top(stack_b, 'b');
-		ft_do_pa(stack_a, stack_b);
-	}
+	ft_push_b_to_a(stack_a, stack_b);
 }

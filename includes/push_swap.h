@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/17 14:50:13 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:27:45 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../srcs/libft/includes/libft.h"
 # include "../srcs/libft/includes/ft_printf.h"
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
