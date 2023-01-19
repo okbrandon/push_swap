@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 11:45:32 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/07 10:56:09 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/19 11:56:31 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ RED				= \033[0;31m
 GREY			= \033[38;5;240m
 RESET			= \033[0m
 BOLD			= \033[1m
+CLEAR			= \r\033[K
 
 NAME		  	= libft.a
 
@@ -80,35 +81,29 @@ CC			  	= gcc
 CFLAGS		 	= -Wall -Wextra -Werror
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.c
+	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Compiling ${GREEN}%s${RESET}...${GREY}" ${notdir $<}
 	@${CC} ${CFLAGS} -I${SRC_DIR} -c $< -o $@
 
 all:			${NAME}
 
 ${NAME}: 		${OBJS}
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were made ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Compiling library binaries...${GREY}"
 	@ar rcs ${NAME} ${OBJS}
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Library compiled ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
+	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Library compiled ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
 ${OBJS}:		| ${OBJ_DIR}
 
 ${OBJ_DIR}:
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Creating objects directory...${GREY}"
 	@mkdir ${OBJ_DIR}
 	@mkdir ${OBJ_DIR}/libft
 	@mkdir ${OBJ_DIR}/ft_printf
 
 clean:
 	@${RM} ${OBJ_DIR}
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.${GREY}"
+	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.${GREY}"
 
 fclean:			clean
 	@${RM} ${NAME}
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Project cleaned ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
+	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Project cleaned ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
 re: 			fclean all
 

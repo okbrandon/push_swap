@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/16 11:39:58 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/19 11:56:53 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ RED				= \033[0;31m
 GREY			= \033[38;5;240m
 RESET			= \033[0m
 BOLD			= \033[1m
+CLEAR			= \r\033[K
 
 # Executable and compilation
 NAME			= push_swap
@@ -45,17 +46,14 @@ CFLAGS			= -Wall -Wextra -Werror -I $(LIBFT_LIB_DIR)/includes/
 RM				= rm -rf
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.c
+	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Compiling ${GREEN}%s${RESET}...${GREY}" ${notdir $<}
 	@${CC} ${CFLAGS} -I${SRC_DIR} -c $< -o $@
 
 all: 			$(NAME)
 
 $(NAME): 		${LIBFT_LIB} $(OBJS)
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were made ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Compiling project...${GREY}"
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_LIB)
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: ${RED}${BOLD}$(NAME)${RESET} compiled ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_LIB)
+	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: ${RED}${BOLD}${NAME} ${RESET}compiled ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
 $(LIBFT_LIB_DIR):
 	@$(MAKE) -C $(LIBFT_LIB_DIR)
@@ -63,7 +61,6 @@ $(LIBFT_LIB_DIR):
 ${OBJS}:		| ${OBJ_DIR}
 
 ${OBJ_DIR}:
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Creating objects directory...${GREY}"
 	@mkdir ${OBJ_DIR}
 
 ${LIBFT_LIB}:
@@ -72,14 +69,12 @@ ${LIBFT_LIB}:
 clean:
 	@$(MAKE) clean -C $(LIBFT_LIB_DIR)
 	@${RM} ${OBJ_DIR}
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.${GREY}"
+	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.${GREY}"
 
 fclean: 		clean
 	@$(MAKE) fclean -C $(LIBFT_LIB_DIR)
 	@${RM} ${NAME}
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
-	@echo "${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Project cleaned ${GREEN}successfully${RESET}.${GREY}"
-	@echo "${RESET}${GREY}────────────────────────────────────────────────────────────────────────────"
+	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Project cleaned ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
 re: fclean all
 
