@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/19 11:27:45 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:47:52 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../srcs/libft/includes/libft.h"
-# include "../srcs/libft/includes/ft_printf.h"
+# include "../libft/includes/libft.h"
+# include "../libft/includes/ft_printf.h"
 # include <limits.h>
 # include <stdio.h>
 
@@ -54,5 +54,9 @@ int		ft_is_in_chunk(t_stack *stack, int min, int max);
 void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
 void	ft_sort_int_tab(int *tab, int size);
+int		ft_get_index_of_int(t_stack *stack, int number);
+int		ft_find_next_max_int(t_stack *stack, int max);
+int		ft_find_next_min_int(t_stack *stack, int min);
+int		ft_get_min_int_index(t_stack *stack, int min);
 
 #endif

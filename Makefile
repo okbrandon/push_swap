@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/19 11:56:53 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/25 18:00:00 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,10 +33,11 @@ SRCS			= ft_args_checker.c \
 		  		ft_sort_utils.c \
 				ft_sort_algorithm.c \
 				ft_sort_process.c \
+				ft_sort_helper.c \
 		  		push_swap.c
 
-LIBFT_LIB		= ${SRC_DIR}libft/libft.a
-LIBFT_LIB_DIR	= ${SRC_DIR}libft
+LIBFT_LIB		= libft/libft.a
+LIBFT_LIB_DIR	= libft
 
 OBJ_DIR			= ./objs/
 OBJS			= ${addprefix ${OBJ_DIR}, ${SRCS:.c=.o}}
