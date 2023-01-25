@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:57 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/25 18:47:52 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/25 19:16:18 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_stack
 	int	*stack;
 	int	size;
 	int	max_size;
-	int	*sorted;
 	int	middle;
 }				t_stack;
 
@@ -53,7 +52,6 @@ void	ft_sort_three(t_stack *stack);
 int		ft_is_in_chunk(t_stack *stack, int min, int max);
 void	ft_chunk_sort(t_stack *stack_a, t_stack *stack_b, int chunk_size);
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b);
-void	ft_sort_int_tab(int *tab, int size);
 int		ft_get_index_of_int(t_stack *stack, int number);
 int		ft_find_next_max_int(t_stack *stack, int max);
 int		ft_find_next_min_int(t_stack *stack, int min);

@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/25 18:00:00 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/25 19:16:25 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ SRCS			= ft_args_checker.c \
 		  		ft_args_process.c \
 				ft_instructions_printer.c \
 				ft_instructions.c \
-				ft_median_utils.c \
 		  		ft_other_utils.c \
 		  		ft_sort_utils.c \
 				ft_sort_algorithm.c \

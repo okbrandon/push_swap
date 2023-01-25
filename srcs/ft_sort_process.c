@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/19 19:48:04 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/25 19:16:39 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,27 +68,10 @@ static void	ft_sort_four_and_five(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-static void	ft_handle_stack(t_stack *stack)
-{
-	int	*array;
-	int	i;
-
-	array = malloc(sizeof(int) * stack->size + 1);
-	if (!array)
-		ft_error(NULL, stack, NULL);
-	i = 0;
-	while (i++ < stack->size)
-		array[i] = stack->stack[i];
-	ft_sort_int_tab(array, stack->size);
-	stack->sorted = array;
-	stack->middle = array[stack->size / 2];
-}
-
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (!stack_a || !stack_b)
 		return ;
-	ft_handle_stack(stack_a);
 	if (stack_a->size == 2)
 		ft_sort_two(stack_a);
 	else if (stack_a->size == 3)
