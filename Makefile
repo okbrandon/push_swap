@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/25 19:16:25 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/26 14:51:08 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CLEAR			= \r\033[K
 
 # Executable and compilation
 NAME			= push_swap
+BONUS_NAME		= checker
 
 SRC_DIR			= ./srcs/
 SRCS			= ft_args_checker.c \
@@ -35,11 +36,14 @@ SRCS			= ft_args_checker.c \
 				ft_sort_helper.c \
 		  		push_swap.c
 
+SRCS_BONUS		= bonus/checker_bonus.c
+
 LIBFT_LIB		= libft/libft.a
 LIBFT_LIB_DIR	= libft
 
 OBJ_DIR			= ./objs/
 OBJS			= ${addprefix ${OBJ_DIR}, ${SRCS:.c=.o}}
+OBJS_BONUS		= ${addprefix ${OBJ_DIR}, ${SRCS_BONUS:.c=.o}}
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror -I $(LIBFT_LIB_DIR)/includes/
@@ -55,16 +59,25 @@ $(NAME): 		${LIBFT_LIB} $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_LIB)
 	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: ${RED}${BOLD}${NAME} ${RESET}compiled ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
+$(BONUS_NAME): 	${LIBFT_LIB} $(OBJS_BONUS)
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(BONUS_NAME) $(LIBFT_LIB)
+	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${BONUS_NAME}${RESET}]: ${RED}${BOLD}${BONUS_NAME} ${RESET}compiled ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
+
 $(LIBFT_LIB_DIR):
 	@$(MAKE) -C $(LIBFT_LIB_DIR)
 
 ${OBJS}:		| ${OBJ_DIR}
 
+${OBJS_BONUS}:	| ${OBJ_DIR}
+
 ${OBJ_DIR}:
 	@mkdir ${OBJ_DIR}
+	@mkdir ${OBJ_DIR}/bonus
 
 ${LIBFT_LIB}:
 	@make -C ${LIBFT_LIB_DIR}
+
+bonus: 			${BONUS_NAME}
 
 clean:
 	@$(MAKE) clean -C $(LIBFT_LIB_DIR)
@@ -74,9 +87,10 @@ clean:
 fclean: 		clean
 	@$(MAKE) fclean -C $(LIBFT_LIB_DIR)
 	@${RM} ${NAME}
+	@${RM} ${BONUS_NAME}
 	@printf "${CLEAR}${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Project cleaned ${GREEN}successfully${RESET}.${GREY}\n${RESET}${GREY}────────────────────────────────────────────────────────────────────────────\n${RESET}"
 
 re: fclean all
 
-.SILENT: all clean fclean re
-.PHONY: all clean fclean re
+.SILENT: all clean fclean re bonus
+.PHONY: all clean fclean re bonus
