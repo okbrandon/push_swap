@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_args_checker.c                                  :+:      :+:    :+:   */
+/*   ft_args_checker_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:51:33 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 19:53:06 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:14:28 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "./includes/checker_bonus.h"
 
-/**
- * @brief A simple function to check if a character is a sign 
- * 
- * @param c			the character to check
- * @return int 		returns if its a sign or not
- */
 static int	ft_is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
 
-/**
- * @brief Compute the arguments and check if they're valid.
- * If they're not, it makes the program exit.
- * 
- * @param argv 		the arguments to check
- */
-static void	ft_are_args_valid(char *argv)
+void	ft_are_args_valid(char *argv)
 {
 	int	i;
 	int	consecutive_signs;
@@ -52,12 +40,6 @@ static void	ft_are_args_valid(char *argv)
 	}
 }
 
-/**
- * @brief A function to check if a char array only contains spaces
- * 
- * @param argv			the char array to check
- * @return int 			returns if the char array only contains spaces
- */
 static int	ft_is_only_spaces(char *argv)
 {
 	int	i;
@@ -72,14 +54,6 @@ static int	ft_is_only_spaces(char *argv)
 	return (1);
 }
 
-/**
- * @brief A function to check if the arguments count is right and
- * if the arguments are valid. If they're somehow not valid,
- * the program will exit it.
- * 
- * @param argc			the argument count
- * @param argv 			the arguments to check
- */
 void	ft_check_args(int argc, char **argv)
 {
 	int	i;

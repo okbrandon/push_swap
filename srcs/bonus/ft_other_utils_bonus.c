@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_other_utils.c                                   :+:      :+:    :+:   */
+/*   ft_other_utils_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 17:23:48 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 19:54:54 by bsoubaig         ###   ########.fr       */
+/*   Created: 2023/01/26 15:10:12 by bsoubaig          #+#    #+#             */
+/*   Updated: 2023/01/26 18:15:40 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "./includes/checker_bonus.h"
 
-/**
- * @brief A function to convert a string to a long int
- * 
- * @param str 			a long number as a string
- * @return long			the converted string
- */
+int	ft_is_sorted(t_stack *stack)
+{
+	int	i;
+
+	if (!stack || !stack->stack)
+		return (0);
+	i = 0;
+	while (i < stack->size - 1)
+	{
+		if (stack->stack[i] > stack->stack[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 long	ft_atol(const char *str)
 {
 	int		i;
@@ -44,12 +54,6 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-/**
- * @brief A function to free two stacks
- * 
- * @param stack_a 		the first stack to be freed
- * @param stack_b 		the second stack to be freed
- */
 void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b)
 {
 	free(stack_a->stack);
@@ -58,13 +62,6 @@ void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b)
 	free(stack_b);
 }
 
-/**
- * @brief A function to exit the program safely
- * 
- * @param splitted 		the array of strings to be freed
- * @param stack 		the stack to be freed
- * @param array			the array to be freed
- */
 void	ft_error(char **splitted, t_stack *stack, int *array)
 {
 	int	i;
@@ -85,4 +82,14 @@ void	ft_error(char **splitted, t_stack *stack, int *array)
 	}
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }

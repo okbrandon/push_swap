@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 11:45:32 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/19 11:56:31 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/26 15:39:05 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,9 @@ SRCS			= libft/ft_atoi.c \
 				ft_printf/ft_puthexnbr.c \
 				ft_printf/ft_putpointer.c \
 				ft_printf/ft_putstr.c \
-				ft_printf/ft_putunsigned.c
+				ft_printf/ft_putunsigned.c \
+				get_next_line/get_next_line.c \
+				get_next_line/get_next_line_utils.c
 
 OBJ_DIR			= ./objs/
 OBJS			= ${addprefix ${OBJ_DIR}, ${SRCS:.c=.o}}
@@ -96,6 +98,7 @@ ${OBJ_DIR}:
 	@mkdir ${OBJ_DIR}
 	@mkdir ${OBJ_DIR}/libft
 	@mkdir ${OBJ_DIR}/ft_printf
+	@mkdir ${OBJ_DIR}/get_next_line
 
 clean:
 	@${RM} ${OBJ_DIR}

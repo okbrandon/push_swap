@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/26 14:51:08 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/26 19:46:52 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,14 @@ SRCS			= ft_args_checker.c \
 				ft_sort_helper.c \
 		  		push_swap.c
 
-SRCS_BONUS		= bonus/checker_bonus.c
+SRCS_BONUS		= bonus/checker_bonus.c \
+				  bonus/ft_args_checker_bonus.c \
+				  bonus/ft_args_parser_bonus.c \
+				  bonus/ft_args_process_bonus.c \
+				  bonus/ft_other_utils_bonus.c \
+				  bonus/ft_instructions_bonus.c \
+				  bonus/ft_action_handler.c \
+				  bonus/ft_checker_process_bonus.c
 
 LIBFT_LIB		= libft/libft.a
 LIBFT_LIB_DIR	= libft
@@ -46,7 +53,7 @@ OBJS			= ${addprefix ${OBJ_DIR}, ${SRCS:.c=.o}}
 OBJS_BONUS		= ${addprefix ${OBJ_DIR}, ${SRCS_BONUS:.c=.o}}
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -I $(LIBFT_LIB_DIR)/includes/
+CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address -I $(LIBFT_LIB_DIR)/includes/
 RM				= rm -rf
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.c
