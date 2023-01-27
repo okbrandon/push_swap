@@ -6,14 +6,14 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 11:18:25 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/27 10:35:16 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:58:24 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /**
- * @brief Basic implementation of ft_strcmp from libft.
+ * @brief Basic implementation of ft_strcmp from piscine.
  * 
  * @param s1		The first string 
  * @param s2 		The second string
