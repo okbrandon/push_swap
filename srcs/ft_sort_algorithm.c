@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:30:59 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/27 10:42:28 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:22:33 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ static void	ft_insert_int_to_top(t_stack *stack, char c, int number)
 {
 	int	index;
 
-	index = 0;
-	while (index < stack->size && stack->stack[index] != number)
-		index++;
-	if (index == 0)
+	index = ft_get_index_of_int(stack, number);
+	if (index == -1)
 		return ;
 	if (index <= stack->size / 2)
 	{
