@@ -6,12 +6,18 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:13:28 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/16 15:10:15 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:50:33 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * @brief Function used to check if a stack is sorted.
+ * 
+ * @param stack 			pointer to the stack
+ * @return int 				sorted (1) or not (0)
+ */
 int	ft_is_sorted(t_stack *stack)
 {
 	int	i;
@@ -28,6 +34,12 @@ int	ft_is_sorted(t_stack *stack)
 	return (1);
 }
 
+/**
+ * @brief Function used to find the minimal number in a stack
+ * 
+ * @param stack 			pointer to the stack
+ * @return int 				the minimal number found
+ */
 int	ft_find_min_int(t_stack *stack)
 {
 	int	i;
@@ -46,6 +58,12 @@ int	ft_find_min_int(t_stack *stack)
 	return (min);
 }
 
+/**
+ * @brief Function used to find the maximal number in a stack
+ * 
+ * @param stack 			pointer to the stack
+ * @return int 				the maximal number found
+ */
 int	ft_find_max_int(t_stack *stack)
 {
 	int	i;
@@ -64,6 +82,13 @@ int	ft_find_max_int(t_stack *stack)
 	return (max);
 }
 
+/**
+ * @brief Function used to move the minimal number to the top
+ * of its stack.
+ * 
+ * @param stack 			pointer to the stack
+ * @param c 				name of the stack (a or b)
+ */
 void	ft_insert_min_int_to_top(t_stack *stack, char c)
 {
 	int	i;
@@ -87,6 +112,13 @@ void	ft_insert_min_int_to_top(t_stack *stack, char c)
 	}
 }
 
+/**
+ * @brief Function used to move the maximal number to the top
+ * of its stack.
+ * 
+ * @param stack 			pointer to the stack
+ * @param c 				name of the stack (a or b)
+ */
 void	ft_insert_max_int_to_top(t_stack *stack, char c)
 {
 	int	i;

@@ -6,12 +6,17 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:39:16 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 19:55:22 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:47:27 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * @brief Simple brute forced algorithm for two numbers
+ * 
+ * @param stack 		pointer to the stack
+ */
 static void	ft_sort_two(t_stack *stack)
 {
 	if (ft_is_sorted(stack))
@@ -20,6 +25,11 @@ static void	ft_sort_two(t_stack *stack)
 		ft_do_rotate(stack, 'a');
 }
 
+/**
+ * @brief Simple brute forced algorithm for three numbers
+ * 
+ * @param stack 		pointer to the stack
+ */
 static void	ft_sort_three(t_stack *stack)
 {
 	if (ft_is_sorted(stack))
@@ -43,6 +53,12 @@ static void	ft_sort_three(t_stack *stack)
 	}
 }
 
+/**
+ * @brief Simple brute forced algorithm for four or five numbers
+ * 
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ */
 static void	ft_sort_four_and_five(t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_is_sorted(stack_a))
@@ -68,6 +84,14 @@ static void	ft_sort_four_and_five(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+/**
+ * @brief Function used to initialize the sorting algorithms.
+ * It'll find the best algorithm to start depending on the size
+ * of the stack a.
+ * 
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ */
 void	ft_init_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (!stack_a || !stack_b)

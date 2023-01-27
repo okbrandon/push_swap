@@ -6,12 +6,19 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 11:18:25 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/17 11:41:27 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:35:16 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * @brief Basic implementation of ft_strcmp from libft.
+ * 
+ * @param s1		The first string 
+ * @param s2 		The second string
+ * @return int 		The first difference found
+ */
 static int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
@@ -22,6 +29,12 @@ static int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+/**
+ * @brief Function used to delay printed actions to compare the
+ * last one with the new one and combine them if possible.
+ * 
+ * @param action 		The action to print
+ */
 void	ft_print_instruction(char *action)
 {
 	static char	*last_action;

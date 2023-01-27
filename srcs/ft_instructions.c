@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:19 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/14 13:14:01 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:36:06 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,13 @@ void	ft_do_reverse_rotate(t_stack *stack, char c)
 		ft_print_instruction("rrb");
 }
 
+/**
+ * @brief sa and sb instructions to swap the two first elements
+ * from the top of the stack.
+ * 
+ * @param stack 		pointer to the stack
+ * @param c 			letter of instruction (a or b)
+ */
 void	ft_do_swap(t_stack *stack, char c)
 {
 	int	temp;

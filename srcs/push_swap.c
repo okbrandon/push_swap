@@ -6,12 +6,15 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:56:46 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/25 19:14:31 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:50:50 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/**
+ * @brief Main program.
+ */
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
