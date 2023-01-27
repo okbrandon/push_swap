@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/26 19:46:52 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/27 11:29:16 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ bonus: 			${BONUS_NAME}
 clean:
 	@$(MAKE) clean -C $(LIBFT_LIB_DIR)
 	@${RM} ${OBJ_DIR}
-	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.${GREY}"
+	@printf "${CLEAR}${RESET}${GREEN}»${RESET} [${PURPLE}${BOLD}${NAME}${RESET}]: Objects were cleaned ${GREEN}successfully${RESET}.\n"
 
 fclean: 		clean
 	@$(MAKE) fclean -C $(LIBFT_LIB_DIR)
