@@ -6,12 +6,15 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:40:09 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 15:48:17 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:51:27 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker_bonus.h"
 
+/**
+ * @brief Main program.
+ */
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;

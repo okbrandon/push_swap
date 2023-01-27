@@ -6,12 +6,18 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:10:12 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 18:15:40 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:58:16 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker_bonus.h"
 
+/**
+ * @brief Function used to check if a stack is sorted.
+ * 
+ * @param stack 			pointer to the stack
+ * @return int 				sorted (1) or not (0)
+ */
 int	ft_is_sorted(t_stack *stack)
 {
 	int	i;
@@ -28,6 +34,12 @@ int	ft_is_sorted(t_stack *stack)
 	return (1);
 }
 
+/**
+ * @brief A function to convert a string to a long int
+ * 
+ * @param str 			a long number as a string
+ * @return long			the converted string
+ */
 long	ft_atol(const char *str)
 {
 	int		i;
@@ -54,6 +66,12 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
+/**
+ * @brief A function to free two stacks
+ * 
+ * @param stack_a 		the first stack to be freed
+ * @param stack_b 		the second stack to be freed
+ */
 void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b)
 {
 	free(stack_a->stack);
@@ -62,6 +80,13 @@ void	ft_free_all_stacks(t_stack *stack_a, t_stack *stack_b)
 	free(stack_b);
 }
 
+/**
+ * @brief A function to exit the program safely
+ * 
+ * @param splitted 		the array of strings to be freed
+ * @param stack 		the stack to be freed
+ * @param array			the array to be freed
+ */
 void	ft_error(char **splitted, t_stack *stack, int *array)
 {
 	int	i;
@@ -84,6 +109,13 @@ void	ft_error(char **splitted, t_stack *stack, int *array)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * @brief Basic implementation of ft_strcmp from piscine.
+ * 
+ * @param s1		The first string 
+ * @param s2 		The second string
+ * @return int 		The first difference found
+ */
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;

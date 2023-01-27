@@ -6,12 +6,20 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:12:49 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 18:25:38 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:54:30 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker_bonus.h"
 
+/**
+ * @brief Function used to handle the pushes. (pa or pb)
+ * 
+ * @param action 			instruction received
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ * @return int 				result of comparison (1 if action was found, 0 if not)
+ */
 static int	ft_handle_pushes(char *action, t_stack *stack_a, t_stack *stack_b)
 {
 	int	result;
@@ -30,6 +38,14 @@ static int	ft_handle_pushes(char *action, t_stack *stack_a, t_stack *stack_b)
 	return (result);
 }
 
+/**
+ * @brief Function used to handle the rotates. (rb, ra or rr)
+ * 
+ * @param action 			instruction received
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ * @return int 				result of comparison (1 if action was found, 0 if not)
+ */
 static int	ft_handle_rotates(char *action, t_stack *stack_a, t_stack *stack_b)
 {
 	int	result;
@@ -54,6 +70,14 @@ static int	ft_handle_rotates(char *action, t_stack *stack_a, t_stack *stack_b)
 	return (result);
 }
 
+/**
+ * @brief Function used to handle the reverse rotates. (rra, rrb or rrr)
+ * 
+ * @param action 			instruction received
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ * @return int 				result of comparison (1 if action was found, 0 if not)
+ */
 static int	ft_handle_reverse_rotates(char *action, t_stack *stack_a, \
 	t_stack *stack_b)
 {
@@ -79,6 +103,14 @@ static int	ft_handle_reverse_rotates(char *action, t_stack *stack_a, \
 	return (result);
 }
 
+/**
+ * @brief Function used to handle swaps. (sa, sb or ss)
+ * 
+ * @param action 			instruction received
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ * @return int 				result of comparison (1 if action was found, 0 if not)
+ */
 static int	ft_handle_swaps(char *action, t_stack *stack_a, t_stack *stack_b)
 {
 	int	result;
@@ -103,6 +135,14 @@ static int	ft_handle_swaps(char *action, t_stack *stack_a, t_stack *stack_b)
 	return (result);
 }
 
+/**
+ * @brief Function used to catch instructions and apply them.
+ * It'll throw an error if the action received is unknown.
+ * 
+ * @param action 			instruction received
+ * @param stack_a 			pointer to the stack a
+ * @param stack_b 			pointer to the stack b
+ */
 void	ft_handle_action(char *action, t_stack *stack_a, t_stack *stack_b)
 {
 	int	result;

@@ -6,12 +6,19 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:47:39 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 15:15:49 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:56:04 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker_bonus.h"
 
+/**
+ * @brief A function to re-alloc a string
+ * 
+ * @param s1 			pointer to the string to be re-allocated
+ * @param s2 			pointer to the string to be added to s1
+ * @return char* 		pointer to the new string
+ */
 char	*ft_free_and_join(char *s1, char *s2)
 {
 	char	*temp;
@@ -21,6 +28,12 @@ char	*ft_free_and_join(char *s1, char *s2)
 	return (temp);
 }
 
+/**
+ * @brief A function to determine the size to be allocated for the stack
+ * 
+ * @param s 			pointer to the string to be processed
+ * @return int 			the size to be allocated 
+ */
 int	ft_int_tab_size(char *s)
 {
 	int	i;
@@ -44,6 +57,14 @@ int	ft_int_tab_size(char *s)
 	return (counter);
 }
 
+/**
+ * @brief A function to process the arguments
+ * 
+ * @param argc 			the number of arguments
+ * @param argv 			pointer to the arguments
+ * @param stack 		pointer to the stack to be filled
+ * @return char** 		pointer to the array of strings
+ */
 char	**ft_process_args(int argc, char **argv, t_stack *stack)
 {
 	int		i;
