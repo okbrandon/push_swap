@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/27 11:29:16 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/01/27 18:15:44 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ OBJS			= ${addprefix ${OBJ_DIR}, ${SRCS:.c=.o}}
 OBJS_BONUS		= ${addprefix ${OBJ_DIR}, ${SRCS_BONUS:.c=.o}}
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address -I $(LIBFT_LIB_DIR)/includes/
+CFLAGS			= -Wall -Wextra -Werror -I $(LIBFT_LIB_DIR)/includes/
 RM				= rm -rf
 
 ${OBJ_DIR}%.o:	${SRC_DIR}%.c

@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:27:44 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/14 09:37:01 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/27 18:47:03 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,9 @@ int	*ft_parse_args(char	**splitted, t_stack *stack)
 	}
 	if (ft_is_duplicates(array, stack))
 		ft_error(splitted, stack, array);
+	i = 0;
+	while (splitted[i])
+		free(splitted[i++]);
 	free(splitted);
 	ft_reverse_array(array, stack->size);
 	return (array);
