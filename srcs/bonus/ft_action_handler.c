@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:12:49 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/27 10:54:30 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:27:48 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ void	ft_handle_action(char *action, t_stack *stack_a, t_stack *stack_b)
 	result += ft_handle_rotates(action, stack_a, stack_b);
 	result += ft_handle_reverse_rotates(action, stack_a, stack_b);
 	result += ft_handle_swaps(action, stack_a, stack_b);
+	free(action);
 	if (!result)
 	{
 		ft_free_all_stacks(stack_a, stack_b);

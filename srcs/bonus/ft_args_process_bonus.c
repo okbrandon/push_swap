@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:47:39 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/27 18:48:24 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:26:13 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	**ft_process_args(int argc, char **argv, t_stack *stack)
 	{
 		s = ft_free_and_join(s, argv[i]);
 		if (i < argc - 1)
-			s = ft_strjoin(s, " ");
+			s = ft_free_and_join(s, " ");
 		i++;
 	}
 	stack->size = ft_int_tab_size(s);
