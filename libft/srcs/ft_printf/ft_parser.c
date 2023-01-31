@@ -6,13 +6,13 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 14:05:31 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 10:58:17 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:39:15 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-int	ft_parse(const char *format, int i, va_list args)
+int	ft_parse_formatters(const char *format, int i, va_list args)
 {
 	int	count;
 

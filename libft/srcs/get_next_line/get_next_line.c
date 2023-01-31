@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:54:04 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/26 15:52:11 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:39:31 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*ft_treat_next_line(char *str)
  * @param str 		- The current line in the buffer
  * @return char* 	- The next line with the read data
  */
-char	*ft_parse(int fd, char *str)
+char	*ft_parse_file(int fd, char *str)
 {
 	char	*buffer;
 	int		read_bytes;
@@ -135,7 +135,7 @@ char	*get_next_line(int fd)
 		str[fd] = NULL;
 		return (NULL);
 	}
-	str[fd] = ft_parse(fd, str[fd]);
+	str[fd] = ft_parse_file(fd, str[fd]);
 	if (!str[fd])
 		return (NULL);
 	line = ft_parse_line(str[fd]);

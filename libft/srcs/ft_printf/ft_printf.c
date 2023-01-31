@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 09:47:51 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/01/07 10:58:22 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:39:17 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += ft_parse(format, i, args);
+			count += ft_parse_formatters(format, i, args);
 		}
 		else
 			count += ft_putchar(format[i]);
