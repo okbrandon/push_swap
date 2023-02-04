@@ -78,10 +78,12 @@ Here you can find the [article](https://medium.com/@jamierobertdawson/push-swap-
 Implementing this algorithm won't get you the highest grade (aka. 100/100) because you have to optimize it and I'll explain how I managed to do it. The goal here is to sort 100 numbers in less than 700 moves and 500 numbers in less than 5500 moves.
 
 > First optimization
+
 To do so, when pushing a number from the stack A to the stack B, I check if the number is smaller than the median of its chunk. If it is, I push it to the stack B (pb) then I rotate the stack B (rb) to put the number at the bottom of the stack. If it's not, I simply push it to the stack B (pb). 
 When the stack A is empty, I then search for the two biggest numbers in the stack B and push them to the stack A (pa) depending on their position (index). If they aren't pushed in the right order, I simply swap them (sa). Finally, I repeat the process until the stack B is empty.
 
 > Second optimization
+
 When printing the instructions to sort the stack, sometimes you can find a sequence of instructions that can be replaced by a single instruction. For example, if you have to rotate the stack A (ra) and then rotate the stack B (rb), you can simply print one instruction (rr).
 To do so, I created a function that makes the instructions asynchronic. It means that if you call an instruction, it will wait for the next instruction to be called before printing it. If the next instruction and the previous one can be replaced by a single instruction, it will print it instead of the two instructions. If not, it will simply print the previous instruction and the current one.
 You can find this function in the `srcs/ft_instructions_printer.c` file.
