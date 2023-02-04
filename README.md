@@ -1,8 +1,5 @@
 <h1 align="center">📚 push_swap</h1>
 
-<p>sorting algorithm program using two stacks and a limited set of instructions.
-</p>
-
 <p align="center">
 	<b><i>Push_swap is a 42 school project that consists in creating a program that sorts a stack of integers with the help of a second stack, using a limited set of instructions.</i></b><br>
 </p>
