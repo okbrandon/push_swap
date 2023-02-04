@@ -6,7 +6,7 @@
 /*   By: bsoubaig <bsoubaig@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:40:34 by bsoubaig          #+#    #+#             */
-/*   Updated: 2023/02/02 10:26:11 by bsoubaig         ###   ########.fr       */
+/*   Updated: 2023/02/04 20:39:43 by bsoubaig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ void	ft_init_checker(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*str;
 
-	if (ft_is_sorted(stack_a))
-	{
-		ft_printf("OK\n");
-		return ;
-	}
 	while (1)
 	{
 		str = get_next_line(0);
