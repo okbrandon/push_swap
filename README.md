@@ -1,5 +1,8 @@
 <h1 align="center">📚 push_swap</h1>
 
+<p>sorting algorithm program using two stacks and a limited set of instructions.
+</p>
+
 <p align="center">
 	<b><i>Push_swap is a 42 school project that consists in creating a program that sorts a stack of integers with the help of a second stack, using a limited set of instructions.</i></b><br>
 </p>
@@ -47,7 +50,7 @@ Run the checker program:
 ```sh
 ./checker [numbers]
 ```
-> The program will wait for you to enter instructions to sort the stack. You can also pipe the instructions of the sorting program to the checker program like below.
+> The program will wait for you to enter instructions to sort the stack. You can also pipe the instructions of the sorting program to the checker program like below. When you're done entering instructions, don't just press enter, type `CTRL + D` to end the program.
 
 ## 📝 Example
 
