@@ -12,6 +12,7 @@
 
 ## 📚 Table of Contents
 
+- [👨‍🏫 Demonstration](#-demonstration)
 - [📚 Table of Contents](#-table-of-contents)
 - [📦 Installation](#-installation)
 - [📝 Usage](#-usage)
