@@ -18,6 +18,14 @@
 - [📝 Example](#-example)
 - [📎 Algorithm](#-algorithm)
 
+## 👨‍🏫 Demonstration
+
+Here's how the algorithm works with 500 random values.
+
+https://user-images.githubusercontent.com/103316367/223166941-7241bbfe-ab47-43ad-abc3-97519f68176c.mp4
+
+> The visualizer used: https://github.com/o-reo/push_swap_visualizer
+
 ## 📦 Installation
 
 Clone the repository from GitHub:
