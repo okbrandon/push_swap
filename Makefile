@@ -6,7 +6,7 @@
 #    By: bsoubaig <bsoubaig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/03 14:21:53 by bsoubaig          #+#    #+#              #
-#    Updated: 2023/01/27 18:51:20 by bsoubaig         ###   ########.fr        #
+#    Updated: 2023/04/18 10:59:18 by bsoubaig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRCS_BONUS		= bonus/checker_bonus.c \
 				  bonus/ft_args_process_bonus.c \
 				  bonus/ft_other_utils_bonus.c \
 				  bonus/ft_instructions_bonus.c \
-				  bonus/ft_action_handler.c \
+				  bonus/ft_action_handler_bonus.c \
 				  bonus/ft_checker_process_bonus.c
 
 LIBFT_LIB		= libft/libft.a
